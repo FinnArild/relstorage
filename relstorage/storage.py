@@ -685,7 +685,7 @@ class RelStorage(
             self._transaction = transaction
 
             user = str(transaction.user)
-            desc = str(transaction.description)
+            desc = str(transaction.description.encode('utf8'))
             ext = transaction._extension
             if ext:
                 ext = cPickle.dumps(ext, 1)
